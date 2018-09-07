@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}{{ object.title  }}{% endblock %}
+
+{% block navbar-left %}
+  <!-- {% include "_navbar.html" with active_link="about" %} -->
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+<div id="sec1" class="text-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>{% include "_brandname.html" %}</h1>
+        <p class="lead">An Awesome Tagline Goes Here</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div style="margin-top: 50px;"></div>
+<div class="container" >
+  <div class="row" >
+    <div class="col-md-9  detail_top_container" >
+      <div class="row">
+            <div class="col-md-7">
+                  <img style="width:100%;height:300px; margin-bottom: 20px;"  src="{{ object.image.url  }}">
+            </div>
+             <div class="col-md-5">
+                  <h4 class="text-center" style="color: #041F34;">{{ object.title  }}</h4><hr>
+                  <p style="color:#968f8f;" >Author: {{ object.author }}</p>
+                  <p > Category ;  {{ object.category }}</p>
+                  <p> Language : {{  object.language  }} </p>
+                  <a class="btn btn-default"  href="{%  url 'booklist:selectedbook'  object.id   %}">Request</a>
+            </div>
+      </div><!-- row  -->
+
+
+
+     <p>{{ object.details }}</p>
+   <hr>
+
+
+   <div id="socialicons">
+<a class="icon" href="LINK" title="Follow with Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+<a class="icon" href="LINK" title="Follow with Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+<a class="icon" href="LINK" title="Follow with Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+<a class="icon" href="LINK" title="Follow with Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+<a class="icon" href="LINK" title="Follow with Bloglovin" target="_blank"><i class="fa fa-heart"></i></a>
+<a class="icon" href="LINK" title="Follow with Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
+<a class="icon" href="LINK" title="Follow with YouTube" target="_blank"><i class="fa fa-youtube"></i></a>
+<a class="icon" href="LINK" title="Follow with Tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>
+<a class="icon" href="LINK" title="Follow with RSS" target="_blank"><i class="fa fa-rss"></i></a>
+<a class="icon" href="mailto:LINK" title="Email Me" target="_blank"><i class="fa fa-envelope"></i></a>
+</div><hr>
+
+
+{% include 'blog/commentbox.html'  %}
+
+
+
+</div><!-- col-md-8  -->
+
+    <div class="col-md-3">
+      <div style="margin:0 0px;background-color:#fff;padding:20px">
+      <h4 class="well well-sm " style="margin:0 0 30px 0;border-bottom:3px solid #ddd;">You may read</h4>
+      <hr class="">
+      {% for item in blogpost_list %}
+      <div class="" >
+        <!--  <img style="width:50%;height:50px; float:right"  src="{{  item.image.url }}" alt="logo"> -->
+       <p>{{ item.content }} </p>
+      </div>
+      {% endfor  %}
+    </div>
+    </div>
+
+
+
+  </div>
+</div><!-- container -->
+
+
+
+{% endblock container %}

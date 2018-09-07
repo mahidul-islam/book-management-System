@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}About{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="category" %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<div id="sec1" class="text-page">
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="well well-sm">Islamic Book Categories</h2>
+
+      <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            <h3 class="panel-title"><a href="category/spirituality">Spirituality</a></h3>
+             </div>
+              <div class="panel-body">
+                <p>Books about spirituality, these books will help you become better muslims by understanding and learning how to gain more rewards as well as staying away from Haram.</p>
+                <a href="#" class="btn btn-primary">See books</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            <h3 class="panel-title"><a href="category/spirituality">Tafseer</a></h3>
+             </div>
+              <div class="panel-body">
+                <p>Tafseer is exegesis, it means to interprete or explains verses of the Quran. There are many famous Tafseer of the Quran. This section covers such books.</p>
+                <a href="#" class="btn btn-primary">See books</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            <h3 class="panel-title"><a href="category/spirituality">Hadith</a></h3>
+             </div>
+              <div class="panel-body">
+                <p>Books about Hadith. Hadith is an individual report of an action, instruction or saying of the Prophet Muhammad. This section covers books about hadith and their explanations.</p>
+                <a href="#" class="btn btn-primary">See books</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            <h3 class="panel-title"><a href="category/spirituality">Aqeedah</a></h3>
+             </div>
+              <div class="panel-body">
+                <p>Islamic Books about aqeedah. Aqeedah is what bonds the Muslims together, it is the creed of the muslims.</p>
+                <a href="#" class="btn btn-primary">See books</a>
+            </div>
+          </div>
+      </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock container %}
